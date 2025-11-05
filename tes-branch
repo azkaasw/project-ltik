@@ -1,1 +1,31 @@
-print ("Hello World!")
+''' Nama: Azka Athallah Asadul Usud
+    NIM: 2507821    
+    Kelas: 1A Rekayasa Perangkat Lunak
+'''
+
+print()
+def cek_login(username, password):
+    return username == "Daspro2023" and password == "Latihan"
+
+def tampil_pesan(teks):
+    print(teks)
+
+def main():
+    print("================== Latihan 2 ==================")
+    kesempatan = 3
+
+    for i in range(kesempatan):
+        user = input("Masukkan username: ")
+        pw = input("Masukkan password: ")
+
+        if cek_login(user, pw):
+            tampil_pesan(f"Login berhasil! Selamat datang {user}")
+            return
+        else:
+            sisa = kesempatan - (i + 1)
+            if sisa == 0:
+                tampil_pesan("Gagal 3 kali. Kesempatan habis, silakan coba lagi nanti.")
+            else:
+                tampil_pesan(f"Login gagal. Sisa kesempatan: {sisa}")
+
+main()
